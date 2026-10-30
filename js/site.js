@@ -242,36 +242,33 @@
     })
   }
 
-  /* ── Radar: cena do Spline em iframe, recortada no disco ─────────── */
+  /* ── Radar: um ponto por local; o local acende quando o feixe passa ── */
   const disco = doc.querySelector('[data-radar]')
-  if (disco && !parado && !economia) {
-    const escalar = () => disco.style.setProperty('--escala', (disco.clientWidth / 196).toFixed(3))
-    escalar()
-    addEventListener('resize', escalar, { passive: true })
-    new IntersectionObserver((entradas, obs) => {
-      if (!entradas[0].isIntersecting) return
-      obs.disconnect()
-      const f = doc.createElement('iframe')
-      f.src = disco.dataset.embed
-      f.title = 'Radar'
-      f.tabIndex = -1
-      f.setAttribute('loading', 'eager')
-      f.addEventListener('load', () => setTimeout(() => disco.classList.add('no-ar'), 1200), { once: true })
-      disco.append(f)
-    }, { rootMargin: '600px 0px' }).observe(disco)
-  }
-
-  /* Pontos da cobertura acendem um por vez. */
   const pontos = [...doc.querySelectorAll('[data-pontos] .ponto')]
   const agora = doc.querySelector('[data-radar-agora]')
-  if (pontos.length) {
-    let k = 0
-    const acender = () => {
-      pontos.forEach((p, i) => p.classList.toggle('ativo', i === k))
-      if (agora) agora.textContent = pontos[k].querySelector('.ponto__lugar').textContent
-    }
-    acender()
-    if (!parado) setInterval(() => { k = (k + 1) % pontos.length; acender() }, 2800)
+  const acender = (k) => {
+    pontos.forEach((p, i) => p.classList.toggle('ativo', i === k))
+    if (agora) agora.textContent = pontos[k].querySelector('.ponto__lugar').textContent
+  }
+  if (disco && pontos.length) {
+    const volta = parseFloat(getComputedStyle(disco).getPropertyValue('--volta')) || 9
+    // Ângulo (graus, a partir do topo, sentido horário) e distância do centro (0–1).
+    const mapa = [[38, 0.62], [104, 0.4], [168, 0.78], [236, 0.55], [305, 0.72]]
+    pontos.forEach((_, i) => {
+      const [ang, dist] = mapa[i % mapa.length]
+      const rad = (ang * Math.PI) / 180
+      const blip = doc.createElement('span')
+      blip.className = 'radar__blip'
+      blip.style.left = `${50 + 50 * dist * Math.sin(rad)}%`
+      blip.style.top = `${50 - 50 * dist * Math.cos(rad)}%`
+      blip.style.setProperty('--atraso', `${(ang / 360) * volta}s`)
+      const marcar = (ev) => { if (ev.target === blip && ev.animationName === 'ping') acender(i) }
+      blip.addEventListener('animationstart', marcar)
+      blip.addEventListener('animationiteration', marcar)
+      disco.append(blip)
+    })
+    acender(0)
+    if (!parado) disco.classList.add('gira')
   }
 
   /* ── Conversa de WhatsApp que se escreve sozinha ─────────────────── */

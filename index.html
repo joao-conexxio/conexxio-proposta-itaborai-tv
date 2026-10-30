@@ -177,7 +177,7 @@
     </ul>
   </div>
 
-  <!-- RADAR: a cena do Spline recortada no círculo e girada para o laranja. -->
+  <!-- RADAR: cada ponto é um local da lista; acende quando o feixe passa. -->
   <div class="faixa radar" id="radar">
     <div class="radar__texto">
       <h2 class="h2" data-reveal>A cobertura vai aonde a notícia está</h2>
@@ -191,8 +191,10 @@
       </ol>
     </div>
     <div class="radar__visor" aria-hidden="true">
-      <div class="radar__disco" data-radar data-embed="https://my.spline.design/radarmaskcopycopy-xv36IEVxM4OnTI1a45YwLvCx-9X8/">
-        <span class="radar__reserva"></span>
+      <div class="radar__disco" data-radar>
+        <span class="radar__aneis"></span>
+        <span class="radar__feixe"></span>
+        <span class="radar__centro"></span>
       </div>
       <p class="radar__agora"><span>Agora</span> <b data-radar-agora>Passarela de Manilha</b></p>
     </div>

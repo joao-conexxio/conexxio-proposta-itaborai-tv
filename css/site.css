@@ -239,24 +239,34 @@ button{font:inherit;color:inherit}
 .ponto.ativo .ponto__lugar{color:var(--laranja)}
 
 .radar__visor{display:grid;justify-items:center;gap:1.2rem}
+/* Radar feito à mão: a cena do Spline só girava com o mouse em cima (e nunca
+   no celular). Aqui o feixe gira sozinho e cada ponto é um local da lista:
+   o site.js posiciona os pontos e atrasa o pulso de cada um pelo ângulo,
+   então ele acende exatamente quando o feixe passa. Só transform/opacity. */
 .radar__disco{
-  --d:min(30rem,82vw);
+  --d:min(30rem,82vw);--volta:9s;
   width:var(--d);aspect-ratio:1;border-radius:50%;position:relative;overflow:hidden;isolation:isolate;
-  background:#111;box-shadow:0 0 0 1px rgba(247,128,30,.35),0 0 0 14px rgba(247,128,30,.06),0 0 80px -10px rgba(247,128,30,.45);
+  background:radial-gradient(circle,#1a1410,#0e0e0e 70%);
+  box-shadow:0 0 0 1px rgba(247,128,30,.35),0 0 0 14px rgba(247,128,30,.06),0 0 80px -10px rgba(247,128,30,.45);
 }
-/* A cena do Spline escala com o iframe: em 600×450 o radar mede ~205 px.
-   Desenhar pequeno e ampliar custa um quarto dos pixels e fica igual
-   (é tudo brilho). O site.js acerta a escala pela largura do disco. */
-.radar__disco iframe{position:absolute;left:50%;top:50%;width:600px;height:450px;border:0;pointer-events:none;
-  transform:translate(-50%,-50%) scale(var(--escala,1.14));filter:hue-rotate(-125deg) saturate(1.4);opacity:0;transition:opacity 1.2s var(--ease)}
-.radar__disco.no-ar iframe{opacity:1}
-/* Reserva em CSS: aneis + varredura enquanto a cena carrega ou sem ela */
-.radar__reserva{position:absolute;inset:0;border-radius:50%;
-  background:radial-gradient(circle,transparent 0 23%,rgba(255,255,255,.07) 23.3% 23.8%,transparent 24% 47%,rgba(255,255,255,.07) 47.3% 47.8%,transparent 48% 71%,rgba(255,255,255,.07) 71.3% 71.8%,transparent 72%),#111;
-  transition:opacity 1s}
-.radar__reserva::after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 90deg,rgba(247,128,30,.35),transparent 70deg);animation:varre 6s linear infinite}
-.radar__disco.no-ar .radar__reserva{opacity:0}
+.radar__aneis{position:absolute;inset:0;border-radius:50%;
+  background:
+    radial-gradient(circle,transparent 0 24.6%,rgba(255,255,255,.09) 24.8% 25.2%,transparent 25.4% 49.6%,rgba(255,255,255,.09) 49.8% 50.2%,transparent 50.4% 74.6%,rgba(255,255,255,.09) 74.8% 75.2%,transparent 75.4%),
+    linear-gradient(transparent calc(50% - .5px),rgba(255,255,255,.05) 0 calc(50% + .5px),transparent 0),
+    linear-gradient(90deg,transparent calc(50% - .5px),rgba(255,255,255,.05) 0 calc(50% + .5px),transparent 0)}
+.radar__feixe{position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 0deg,transparent 0 280deg,rgba(247,128,30,.05) 290deg,rgba(247,128,30,.38) 358deg,rgba(255,176,102,.95) 359.4deg,transparent 360deg)}
+.radar__centro{position:absolute;left:50%;top:50%;width:9%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+  background:radial-gradient(circle at 40% 35%,#FFB066,var(--laranja) 60%);box-shadow:0 0 28px 6px rgba(247,128,30,.55)}
+.radar__blip{position:absolute;width:3.4%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+  background:#FF9A3D;box-shadow:0 0 12px 3px rgba(247,128,30,.7);opacity:.25}
+.radar__blip::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,154,61,.9);opacity:0}
+.radar__disco.gira .radar__feixe{animation:varre var(--volta) linear infinite}
+.radar__disco.gira .radar__blip{animation:ping var(--volta) linear var(--atraso,0s) infinite}
+.radar__disco.gira .radar__blip::after{animation:eco var(--volta) ease-out var(--atraso,0s) infinite}
 @keyframes varre{to{transform:rotate(360deg)}}
+@keyframes ping{0%{opacity:1;scale:1.7}6%{scale:1}55%{opacity:.35}100%{opacity:.25;scale:1}}
+@keyframes eco{0%{opacity:.9;scale:1}22%{opacity:0;scale:5}100%{opacity:0;scale:5}}
 .radar__agora{font-size:1.05rem;color:rgba(255,255,255,.7);display:flex;gap:.6rem;align-items:center}
 .radar__agora span{background:var(--vivo);color:#fff;font-weight:800;font-size:.78rem;padding:.2rem .5rem;border-radius:5px}
 .radar__agora b{color:var(--branco);font-stretch:85%}
