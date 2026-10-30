@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Itaboraí TV: aqui a notícia não para</title>
+<meta name="description" content="Jornalismo de rua em Itaboraí: trânsito na BR-101, Manilha, Centro e bairros, contado por quem está lá. Envie sua notícia pelo WhatsApp.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0C1A3A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Itaboraí TV: aqui a notícia não para">
+<meta property="og:description" content="Proposta de site novo para a Itaboraí TV, com as notícias do site atual e os reels do Instagram no mesmo lugar.">
+<meta property="og:image" content="https://joao-conexxio.github.io/conexxio-proposta-itaborai-tv/previa.jpg">
+<meta property="og:url" content="https://joao-conexxio.github.io/conexxio-proposta-itaborai-tv/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,700..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://itaboraitv.com.br">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body class="no-js">
+
+<a class="pular" href="#noticias">Pular para as notícias</a>
+
+<header class="topo" id="cabecalho">
+  <div class="topo__in">
+    <a class="topo__marca" href="#inicio" aria-label="Itaboraí TV, início">
+      <img src="img/logo.png" alt="" width="52" height="52">
+      <span>Itaboraí TV</span>
+    </a>
+    <nav class="topo__nav" aria-label="Seções">
+      <a href="#noticias">Notícias</a>
+      <a href="#ruas">Nas ruas</a>
+      <a href="#envie">Envie sua notícia</a>
+      <a href="#anuncie">Anuncie</a>
+    </nav>
+    <p class="aovivo" aria-label="Horário de Itaboraí">
+      <span class="aovivo__ponto" aria-hidden="true"></span>
+      <span class="aovivo__rotulo">Ao vivo</span>
+      <time class="aovivo__hora" data-relogio>--:--</time>
+    </p>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO: o estúdio. Tela vertical de reel com tarja, esfera do Spline atrás. -->
+<section class="hero" id="inicio" aria-labelledby="h1">
+  <div class="esfera" aria-hidden="true" data-cena="https://prod.spline.design/VeKf-53rLnULAafL/scene.splinecode"><div class="esfera__cena"></div></div>
+  <div class="hero__in" id="topo">
+    <div class="hero__texto">
+      <p class="hero__praca">Itaboraí, RJ</p>
+      <h1 class="hero__titulo" id="h1" data-palavras>Aqui a notícia não para.</h1>
+      <p class="hero__lead">Jornalismo de rua feito em Itaboraí. O trânsito da BR-101, a passarela de Manilha, o Centro e os bairros, contados por quem está lá na hora.</p>
+      <div class="hero__acoes">
+        <a class="btn btn--cheio" href="#noticias">Ver as últimas notícias</a>
+        <a class="btn btn--linha" data-zap="Olá, Itaboraí TV! Tenho uma notícia para enviar." href="https://wa.me/5521964235899" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-zap"/></svg>
+          Enviar uma notícia
+        </a>
+      </div>
+      <p class="hero__publico"><strong>32,9 mil pessoas</strong> acompanham pelo Instagram</p>
+    </div>
+
+    <div class="tv" aria-label="Transmissão da Itaboraí TV">
+      <div class="tv__sinal" aria-hidden="true"><i></i><i></i><i></i></div>
+      <svg class="tv__antena" viewBox="0 0 120 60" aria-hidden="true"><path d="M30 4 60 52 96 10" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="tv__tela">
+        <img src="img/anderson.jpg" alt="Anderson Pedrinha, repórter da Itaboraí TV, com o microfone do canal" width="413" height="551">
+        <span class="tv__linhas" aria-hidden="true"></span>
+        <span class="tv__bug-vivo">Ao vivo</span>
+        <img class="tv__bug-logo" src="img/logo.png" alt="" width="52" height="52">
+        <div class="tarja" aria-live="off">
+          <span class="tarja__chapeu" data-tarja-chapeu>Itaboraí TV</span>
+          <span class="tarja__texto" data-tarja-texto>Anderson Pedrinha, repórter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Plantão: letreiro com as manchetes do site, como no rodapé da TV. -->
+  <div class="plantao" aria-label="Manchetes recentes">
+    <span class="plantao__selo">Plantão</span>
+    <div class="plantao__trilho">
+      <ul class="plantao__fita" data-plantao>
+        <li>Caminhada Rosa reúne moradores no Centro de Itaboraí</li>
+        <li>BR-101 com lentidão no sentido Região dos Lagos</li>
+        <li>Itamec promove ação especial da Irwin com brindes</li>
+        <li>Ação solidária leva alimento a pessoas em situação de rua no Centro</li>
+        <li>Novo espaço para os oleiros de Itaboraí</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- NOTÍCIAS: carregadas ao vivo do WordPress atual, com reserva estática. -->
+<section class="noticias" id="noticias" aria-labelledby="h-noticias">
+  <div class="faixa">
+    <div class="sec-topo">
+      <h2 class="h2" id="h-noticias" data-reveal>Últimas de Itaboraí</h2>
+      <div class="filtros" role="group" aria-label="Filtrar por assunto" data-filtros>
+        <button type="button" class="filtro" aria-pressed="true" data-cat="">Tudo</button>
+      </div>
+    </div>
+
+    <div class="manchetes" data-manchetes aria-live="polite">
+      <!-- Reserva: o mesmo conteúdo do site hoje. O JS troca pelo que vier da API. -->
+      <article class="nota nota--destaque">
+        <a href="https://itaboraitv.com.br/caminhada-rosa-acontece-neste-sabado-em-itaborai/">
+          <figure class="nota__img"><img src="img/caminhada.jpg" alt="" loading="lazy"></figure>
+          <div class="nota__corpo">
+            <p class="nota__meta"><span class="nota__cat">Notícias</span><time datetime="2026-10-16">16 de outubro</time></p>
+            <h3 class="nota__titulo">Caminhada Rosa acontece neste sábado em Itaboraí</h3>
+            <p class="nota__resumo">Evento tradicional do Outubro Rosa reúne a população pela prevenção e pelo diagnóstico precoce do câncer de mama.</p>
+          </div>
+        </a>
+      </article>
+      <article class="nota">
+        <a href="https://itaboraitv.com.br/itamec-promove-acao-especial-da-irwin-com-brindes-e-kit-de-brocas-nesta-quarta-feira/">
+          <figure class="nota__img"><img src="img/itamec.jpg" alt="" loading="lazy"></figure>
+          <div class="nota__corpo">
+            <p class="nota__meta"><span class="nota__cat">Notícias</span><time datetime="2026-10-14">14 de outubro</time></p>
+            <h3 class="nota__titulo">Itamec promove ação especial da Irwin com brindes e kit de brocas</h3>
+          </div>
+        </a>
+      </article>
+      <article class="nota">
+        <a href="https://itaboraitv.com.br/igreja-evangelica-leva-alimento-oracao-e-esperanca-ao-centro-de-itaborai/">
+          <figure class="nota__img"><img src="img/solidaria.jpg" alt="" loading="lazy"></figure>
+          <div class="nota__corpo">
+            <p class="nota__meta"><span class="nota__cat">Notícias</span><time datetime="2026-10-14">14 de outubro</time></p>
+            <h3 class="nota__titulo">Igreja leva alimento, oração e esperança ao centro de Itaboraí</h3>
+          </div>
+        </a>
+      </article>
+      <article class="nota">
+        <a href="https://itaboraitv.com.br/novo-espaco-para-os-oleiros-de-itaborai/">
+          <figure class="nota__img"><img src="img/oleiros.jpg" alt="" loading="lazy"></figure>
+          <div class="nota__corpo">
+            <p class="nota__meta"><span class="nota__cat">Notícias</span><time datetime="2026-08-27">27 de agosto</time></p>
+            <h3 class="nota__titulo">Novo espaço para os oleiros de Itaboraí</h3>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <div class="noticias__mais">
+      <button type="button" class="btn btn--escuro" data-mais hidden>Carregar mais notícias</button>
+    </div>
+  </div>
+</section>
+
+<!-- NAS RUAS: os reels do Instagram, onde a cobertura acontece todo dia. -->
+<section class="ruas" id="ruas" aria-labelledby="h-ruas">
+  <div class="faixa">
+    <div class="sec-topo sec-topo--claro">
+      <div>
+        <h2 class="h2" id="h-ruas" data-reveal>Nas ruas, todo dia</h2>
+        <p class="sec-lead" data-reveal>São 3.691 publicações no Instagram. Os boletins mais recentes, direto da rua.</p>
+      </div>
+      <a class="link-seta" href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener">Ver tudo no Instagram</a>
+    </div>
+  </div>
+  <div class="trilho-reels" tabindex="0" aria-label="Reels recentes, role para o lado">
+    <ul class="reels">
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfHz4jXRR7z/" target="_blank" rel="noopener"><img src="img/reel-02.jpg" alt="Anderson Pedrinha com o microfone da Itaboraí TV na BR-101" loading="lazy" width="360" height="640"><span class="reel__leg">BR-101 lenta sentido Região dos Lagos</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfF6gw_Rvpv/" target="_blank" rel="noopener"><img src="img/reel-09.jpg" alt="Boletim do trânsito em Manilha" loading="lazy" width="360" height="640"><span class="reel__leg">Trânsito em Manilha, 29/10 às 18h</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener"><img src="img/reel-08.jpg" alt="Repórter da Itaboraí TV no boletim de trânsito de Manilha" loading="lazy" width="360" height="640"><span class="reel__leg">Boletim de trânsito em Manilha</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener"><img src="img/reel-04.jpg" alt="Policiais e trator retirando entulho de uma rua" loading="lazy" width="360" height="640"><span class="reel__leg">PM retira barricadas em Itaboraí</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfF-amuRkpN/" target="_blank" rel="noopener"><img src="img/reel-07.jpg" alt="Ônibus pegando fogo, com fumaça preta" loading="lazy" width="360" height="640"><span class="reel__leg">Ônibus incendiado no RJ</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener"><img src="img/reel-10.jpg" alt="Homem segura banheiro químico durante ventania" loading="lazy" width="360" height="640"><span class="reel__leg">Flagrante do temporal</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener"><img src="img/reel-12.jpg" alt="Policiais militares em operação" loading="lazy" width="360" height="640"><span class="reel__leg">Operação da PM em Itaboraí</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener"><img src="img/reel-03.jpg" alt="Anderson Pedrinha à noite com o microfone da Itaboraí TV" loading="lazy" width="360" height="640"><span class="reel__leg">Agenda da noite na cidade</span></a></li>
+    </ul>
+  </div>
+
+  <!-- RADAR: a cena do Spline recortada no círculo e girada para o laranja. -->
+  <div class="faixa radar" id="radar">
+    <div class="radar__texto">
+      <h2 class="h2" data-reveal>A cobertura vai aonde a notícia está</h2>
+      <p class="sec-lead" data-reveal>Da passarela de Manilha ao Centro, os últimos pontos por onde a Itaboraí TV passou.</p>
+      <ol class="pontos" data-pontos>
+        <li class="ponto"><span class="ponto__lugar">Passarela de Manilha</span><span class="ponto__o-que">Boletim do trânsito no fim da tarde</span></li>
+        <li class="ponto"><span class="ponto__lugar">BR-101, sentido Região dos Lagos</span><span class="ponto__o-que">Fluxo intenso no feriado prolongado</span></li>
+        <li class="ponto"><span class="ponto__lugar">Praça Marechal Floriano Peixoto</span><span class="ponto__o-que">Concentração da Caminhada Rosa</span></li>
+        <li class="ponto"><span class="ponto__lugar">Av. 22 de Maio, São Joaquim</span><span class="ponto__o-que">Ação da Irwin na Itamec Matriz</span></li>
+        <li class="ponto"><span class="ponto__lugar">Nossa AIPERJ</span><span class="ponto__o-que">Retrô Festival em 7 de novembro</span></li>
+      </ol>
+    </div>
+    <div class="radar__visor" aria-hidden="true">
+      <div class="radar__disco" data-radar data-embed="https://my.spline.design/radarmaskcopycopy-xv36IEVxM4OnTI1a45YwLvCx-9X8/">
+        <span class="radar__reserva"></span>
+      </div>
+      <p class="radar__agora"><span>Agora</span> <b data-radar-agora>Passarela de Manilha</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- ENVIE: o morador vira fonte. Passos são sequência de verdade. -->
+<section class="envie" id="envie" aria-labelledby="h-envie">
+  <div class="faixa envie__grade">
+    <div class="envie__texto">
+      <h2 class="h2" id="h-envie" data-reveal>Viu acontecer? Manda pra gente.</h2>
+      <p class="sec-lead" data-reveal>Boa parte das notícias da cidade chega pelo WhatsApp de quem mora aqui. A equipe confere antes de publicar.</p>
+      <ol class="passos">
+        <li data-reveal><b>Grave ou fotografe</b><span>De onde você estiver, sem se colocar em risco.</span></li>
+        <li data-reveal style="--d:120ms"><b>Mande no WhatsApp</b><span>Com o lugar e a hora. Seu nome só aparece se você quiser.</span></li>
+        <li data-reveal style="--d:240ms"><b>A gente confere e publica</b><span>No Instagram, no YouTube e aqui no site.</span></li>
+      </ol>
+      <a class="btn btn--cheio" data-zap="Olá, Itaboraí TV! Tenho uma notícia para enviar." href="https://wa.me/5521964235899" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-zap"/></svg>
+        Enviar pelo WhatsApp
+      </a>
+    </div>
+
+    <div class="aparelho" aria-label="Exemplo de conversa com a Itaboraí TV pelo WhatsApp">
+      <div class="aparelho__topo">
+        <img src="img/logo.png" alt="" width="36" height="36">
+        <div><b>Itaboraí TV</b><span data-zap-status>online</span></div>
+      </div>
+      <ol class="conversa" data-conversa>
+        <li class="msg msg--eu" data-passo="0">Boa tarde! Trânsito parado na passarela de Manilha agora</li>
+        <li class="msg msg--eu msg--local" data-passo="1"><span class="msg__mapa" aria-hidden="true"></span><b>Localização</b>Passarela de Manilha, Itaboraí</li>
+        <li class="msg msg--eles" data-passo="2">Recebido, obrigado! Já estamos indo confirmar.</li>
+        <li class="msg msg--eles msg--video" data-passo="3"><img src="img/reel-09.jpg" alt="" width="360" height="640"><span>Boletim no ar: trânsito em Manilha às 18h</span></li>
+      </ol>
+      <p class="digitando" data-digitando aria-hidden="true"><i></i><i></i><i></i></p>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM CONTA -->
+<section class="quem" id="anderson" aria-labelledby="h-quem">
+  <div class="faixa quem__grade">
+    <figure class="quem__foto foto" data-revela>
+      <img src="img/anderson.jpg" alt="Anderson Pedrinha sorrindo, com o microfone da Itaboraí TV" loading="lazy" width="413" height="551">
+      <figcaption class="tarja tarja--fixa">
+        <span class="tarja__chapeu">Repórter e jornalista</span>
+        <span class="tarja__texto">Anderson Pedrinha</span>
+      </figcaption>
+    </figure>
+    <div class="quem__texto">
+      <h2 class="h2" id="h-quem" data-reveal>Quem está com o microfone</h2>
+      <p class="quem__fala" data-acende>Anderson Pedrinha é repórter e jornalista pós-graduado. Criou a Itaboraí TV para contar o que acontece na cidade do jeito que se conversa na rua: simples, direto e perto de quem mora aqui.</p>
+      <p class="sec-lead">Quando um negócio de Itaboraí tem novidade, ele vai até lá e mostra. É assim que o comércio da cidade aparece para quem compra nele.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ANUNCIE: a receita do canal. Fundo vivo do kit na cor da marca. -->
+<section class="anuncie" id="anuncie" aria-labelledby="h-anuncie" data-vivo>
+  <canvas class="vivo" aria-hidden="true"></canvas>
+  <div class="faixa anuncie__in">
+    <div class="anuncie__topo">
+      <h2 class="h2" id="h-anuncie" data-reveal>Seu negócio na tela de quem mora em Itaboraí</h2>
+      <p class="sec-lead" data-reveal>Publicidade feita na rua, com o Anderson na sua porta. Quem assiste é vizinho do seu balcão.</p>
+    </div>
+
+    <dl class="numeros">
+      <div data-reveal><dt>seguidores no Instagram</dt><dd><span data-count="32900">32,9 mil</span></dd></div>
+      <div data-reveal style="--d:120ms"><dt>publicações até hoje</dt><dd><span data-count="3691">3.691</span></dd></div>
+      <div data-reveal style="--d:240ms"><dt>vídeos publicados só em 29 de outubro</dt><dd><span data-count="9">9</span></dd></div>
+    </dl>
+
+    <div class="formatos" data-pilha>
+      <article class="formato">
+        <img class="formato__img" src="img/reel-02.jpg" alt="" loading="lazy">
+        <div><h3>Reel na sua loja</h3><p>O Anderson vai até o seu negócio, grava e publica no perfil. Foi assim com a ação da Irwin na Itamec e com a promoção das Drogarias Mais Barato.</p></div>
+      </article>
+      <article class="formato">
+        <img class="formato__img" src="img/reel-09.jpg" alt="" loading="lazy">
+        <div><h3>Patrocínio do boletim de trânsito</h3><p>Sua marca no canto da tela no boletim que a cidade confere antes de sair de casa. Hoje quem assina é a Itamec.</p></div>
+      </article>
+      <article class="formato">
+        <img class="formato__img formato__img--paisagem" src="img/itamec.jpg" alt="" loading="lazy">
+        <div><h3>Matéria no site</h3><p>Uma notícia sobre o seu negócio, que fica no site e aparece para quem procura no Google.</p></div>
+      </article>
+      <article class="formato">
+        <img class="formato__img formato__img--paisagem" src="img/caminhada.jpg" alt="" loading="lazy">
+        <div><h3>Cobertura do seu evento</h3><p>Divulgação antes e cobertura no dia, com chamada nos stories. Como a agenda do Retrô Festival na Nossa AIPERJ.</p></div>
+      </article>
+    </div>
+
+    <div class="parceiros">
+      <p class="parceiros__titulo">Já apareceram na Itaboraí TV</p>
+      <div class="parceiros__trilho" aria-hidden="true">
+        <ul class="parceiros__fita">
+          <li>Itamec</li><li>Drogarias Mais Barato</li><li>CNA Idiomas</li><li>Nossa AIPERJ</li><li>DoCita</li><li>Prof° Câmbio</li><li>Bar da Feira</li><li>Clínica de Psicologia MS</li><li>Plataforma Treinamentos</li>
+        </ul>
+      </div>
+      <p class="sr">Itamec, Drogarias Mais Barato, CNA Idiomas, Nossa AIPERJ, DoCita, Prof° Câmbio, Bar da Feira, Clínica de Psicologia MS e Plataforma Treinamentos.</p>
+    </div>
+
+    <div class="anuncie__cta" id="contato">
+      <a class="btn btn--cheio btn--grande" data-zap="Olá, Anderson! Quero anunciar meu negócio na Itaboraí TV." href="https://wa.me/5521964235899" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-zap"/></svg>
+        Quero anunciar
+      </a>
+      <p>Resposta pelo WhatsApp, com valores e datas livres.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CANAIS -->
+<section class="canais" aria-labelledby="h-canais">
+  <div class="faixa">
+    <h2 class="h2" id="h-canais" data-reveal>Acompanhe onde preferir</h2>
+    <ul class="canais__lista">
+      <li><a href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-insta"/></svg><b>Instagram</b><span>@itaborai.tv</span></a></li>
+      <li><a href="https://www.youtube.com/@itaboraitvdigital" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-yt"/></svg><b>YouTube</b><span>@itaboraitvdigital</span></a></li>
+      <li><a href="https://web.facebook.com/andersonpedrinha.atitudepositiva" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-fb"/></svg><b>Facebook</b><span>Anderson Pedrinha</span></a></li>
+      <li><a data-zap="Olá, Itaboraí TV!" href="https://wa.me/5521964235899" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-zap"/></svg><b>WhatsApp</b><span>(21) 96423-5899</span></a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="faixa rodape__in">
+    <div class="rodape__marca">
+      <img src="img/logo.png" alt="Itaboraí TV" width="64" height="64" loading="lazy">
+      <p>Jornalismo de rua e informação em Itaboraí, RJ.<br>Aqui a notícia não para.</p>
+    </div>
+    <p class="rodape__assina">Proposta de site feita pela <a href="https://conexxio.com.br" target="_blank" rel="noopener">Conexxio</a>. As notícias desta página vêm ao vivo do site atual, itaboraitv.com.br.</p>
+  </div>
+</footer>
+
+<div class="barra-zap">
+  <a class="btn btn--cheio" data-zap="Olá, Itaboraí TV! Tenho uma notícia para enviar." href="https://wa.me/5521964235899" target="_blank" rel="noopener">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-zap"/></svg>
+    Enviar uma notícia
+  </a>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.08c-.24.68-1.42 1.3-1.96 1.35-.5.05-.98.23-3.3-.69-2.8-1.1-4.56-3.96-4.7-4.15-.13-.18-1.12-1.49-1.12-2.85 0-1.35.71-2.02.96-2.3.25-.27.55-.34.73-.34l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.86 2.08.07.14.12.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.35-.41.47-.14.14-.28.29-.12.56.16.28.7 1.15 1.5 1.87 1.04.92 1.91 1.21 2.18 1.35.28.14.44.11.6-.07.16-.19.69-.8.88-1.08.18-.27.37-.23.62-.14.25.09 1.6.76 1.87.9.28.13.46.2.53.32.07.11.07.66-.17 1.33Z"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.77-1.77C18.27 5 12 5 12 5s-6.27 0-7.83.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.77 1.77C5.73 19 12 19 12 19s6.27 0 7.83-.43a2.5 2.5 0 0 0 1.77-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.2H7.4V14h2.7v8h3.4Z"/></symbol>
+</svg>
+
+<script src="js/motion.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
