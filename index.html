@@ -16,7 +16,7 @@
 <link rel="icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,700..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..900&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://itaboraitv.com.br">
 <link rel="stylesheet" href="css/site.css">
 </head>
@@ -46,9 +46,8 @@
 
 <main>
 
-<!-- HERO: o estúdio. Tela vertical de reel com tarja, esfera do Spline atrás. -->
+<!-- HERO: o estúdio. Tela vertical de reel com tarja e ondas de sinal saindo dela. -->
 <section class="hero" id="inicio" aria-labelledby="h1">
-  <div class="esfera" aria-hidden="true" data-cena="https://prod.spline.design/VeKf-53rLnULAafL/scene.splinecode"><div class="esfera__cena"></div></div>
   <div class="hero__in" id="topo">
     <div class="hero__texto">
       <p class="hero__praca">Itaboraí, RJ</p>
@@ -65,7 +64,8 @@
     </div>
 
     <div class="tv" aria-label="Transmissão da Itaboraí TV">
-      <div class="tv__sinal" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="tv__sinal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="tv__brilho" aria-hidden="true"></div>
       <svg class="tv__antena" viewBox="0 0 120 60" aria-hidden="true"><path d="M30 4 60 52 96 10" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <div class="tv__tela">
         <img src="img/anderson.jpg" alt="Anderson Pedrinha, repórter da Itaboraí TV, com o microfone do canal" width="413" height="551">
@@ -165,14 +165,15 @@
   </div>
   <div class="trilho-reels" tabindex="0" aria-label="Reels recentes, role para o lado">
     <ul class="reels">
-      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfHz4jXRR7z/" target="_blank" rel="noopener"><img src="img/reel-02.jpg" alt="Anderson Pedrinha com o microfone da Itaboraí TV na BR-101" loading="lazy" width="360" height="640"><span class="reel__leg">BR-101 lenta sentido Região dos Lagos</span></a></li>
-      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfF6gw_Rvpv/" target="_blank" rel="noopener"><img src="img/reel-09.jpg" alt="Boletim do trânsito em Manilha" loading="lazy" width="360" height="640"><span class="reel__leg">Trânsito em Manilha, 29/10 às 18h</span></a></li>
-      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener"><img src="img/reel-08.jpg" alt="Repórter da Itaboraí TV no boletim de trânsito de Manilha" loading="lazy" width="360" height="640"><span class="reel__leg">Boletim de trânsito em Manilha</span></a></li>
-      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener"><img src="img/reel-04.jpg" alt="Policiais e trator retirando entulho de uma rua" loading="lazy" width="360" height="640"><span class="reel__leg">PM retira barricadas em Itaboraí</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfHz4jXRR7z/" target="_blank" rel="noopener"><img src="img/reel-02.jpg" alt="Anderson Pedrinha com o microfone da Itaboraí TV na BR-101" loading="lazy" width="360" height="640"><span class="reel__leg">Trânsito lento na BR-101 no feriado</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfGaDFGxo6E/" target="_blank" rel="noopener"><img src="img/reel-03.jpg" alt="Anderson Pedrinha à noite com o microfone da Itaboraí TV" loading="lazy" width="360" height="640"><span class="reel__leg">Homenagem surpresa ao Anderson</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfGN-w4RVo9/" target="_blank" rel="noopener"><img src="img/reel-04.jpg" alt="Policiais e trator retirando entulho de uma rua" loading="lazy" width="360" height="640"><span class="reel__leg">PM retira barricadas em Itaboraí</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfGHGNSxLrZ/" target="_blank" rel="noopener"><img src="img/reel-05.jpg" alt="Imagem de dentro de uma viatura" loading="lazy" width="360" height="640"><span class="reel__leg">Presos por golpes contra idosos</span></a></li>
       <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfF-amuRkpN/" target="_blank" rel="noopener"><img src="img/reel-07.jpg" alt="Ônibus pegando fogo, com fumaça preta" loading="lazy" width="360" height="640"><span class="reel__leg">Ônibus incendiado no RJ</span></a></li>
-      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener"><img src="img/reel-10.jpg" alt="Homem segura banheiro químico durante ventania" loading="lazy" width="360" height="640"><span class="reel__leg">Flagrante do temporal</span></a></li>
-      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener"><img src="img/reel-12.jpg" alt="Policiais militares em operação" loading="lazy" width="360" height="640"><span class="reel__leg">Operação da PM em Itaboraí</span></a></li>
-      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/" target="_blank" rel="noopener"><img src="img/reel-03.jpg" alt="Anderson Pedrinha à noite com o microfone da Itaboraí TV" loading="lazy" width="360" height="640"><span class="reel__leg">Agenda da noite na cidade</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfF9W2oxWOd/" target="_blank" rel="noopener"><img src="img/reel-08.jpg" alt="Repórter da Itaboraí TV no boletim de trânsito de Manilha" loading="lazy" width="360" height="640"><span class="reel__leg">Ao vivo da passarela de Manilha</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfF6gw_Rvpv/" target="_blank" rel="noopener"><img src="img/reel-09.jpg" alt="Boletim do trânsito em Manilha" loading="lazy" width="360" height="640"><span class="reel__leg">Trânsito em Manilha, 29/10 às 18h</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfFzHCTxIyx/" target="_blank" rel="noopener"><img src="img/reel-10.jpg" alt="Homem segura banheiro químico durante tempestade" loading="lazy" width="360" height="640"><span class="reel__leg">Flagrante na tempestade</span></a></li>
+      <li><a class="reel" href="https://www.instagram.com/itaborai.tv/reel/DfDB09_T__s/" target="_blank" rel="noopener"><img src="img/reel-12.jpg" alt="Policiais militares em operação" loading="lazy" width="360" height="640"><span class="reel__leg">PM contra cabeamento clandestino</span></a></li>
     </ul>
   </div>
 

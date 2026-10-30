@@ -242,38 +242,10 @@
     })
   }
 
-  /* ── Esfera do Spline no hero (carregador do kit) ────────────────── */
-  const esfera = doc.querySelector('.esfera')
-  if (esfera) {
-    if (parado || economia) esfera.remove()
-    else {
-      const RUNTIME = 'https://cdn.jsdelivr.net/npm/@splinetool/runtime@1.12.98/build/runtime.js'
-      const ligar = async () => {
-        try {
-          const { Application } = await import(RUNTIME)
-          const tela = doc.createElement('canvas')
-          esfera.querySelector('.esfera__cena').append(tela)
-          const app = new Application(tela)
-          await app.load(esfera.dataset.cena)
-          try { app.setBackgroundColor('transparent') } catch {}
-          esfera.classList.add('viva')
-        } catch {
-          esfera.remove()
-        }
-      }
-      const agendar = () => {
-        if ('requestIdleCallback' in window) requestIdleCallback(ligar, { timeout: 2500 })
-        else setTimeout(ligar, 1200)
-      }
-      if (doc.readyState === 'complete') agendar()
-      else addEventListener('load', agendar, { once: true })
-    }
-  }
-
   /* ── Radar: cena do Spline em iframe, recortada no disco ─────────── */
   const disco = doc.querySelector('[data-radar]')
   if (disco && !parado && !economia) {
-    const escalar = () => disco.style.setProperty('--escala', ((disco.clientWidth / 420) * 1.05).toFixed(3))
+    const escalar = () => disco.style.setProperty('--escala', (disco.clientWidth / 196).toFixed(3))
     escalar()
     addEventListener('resize', escalar, { passive: true })
     new IntersectionObserver((entradas, obs) => {
